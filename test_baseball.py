@@ -20,3 +20,11 @@ class TestBaseball(TestCase):
             with self.subTest(f"{test_case}"):
                 self.assert_if_illegal_argument(test_case)
 
+    def test_all_strike_input(self):
+        game_result = self.game.guess("123")
+
+        self.assertIsNotNone(game_result)
+        self.assertTrue(game_result.get_solved())
+        self.assertEqual(3, game_result.get_strikes())
+        self.assertEqual(0, game_result.get_balls())
+

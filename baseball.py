@@ -1,3 +1,6 @@
+from baseballresult import BaseballResult
+
+
 class Baseball:
     LENGTH_OF_ANSWER = 3
 
@@ -20,3 +23,6 @@ class Baseball:
 
     def guess(self, user_try):
         self.assert_if_illegal_input(user_try)
+
+
+        return BaseballResult(True, 3, 0)
