@@ -7,7 +7,7 @@ class Baseball:
     def __init__(self):
         self.answer = "123"
 
-    def assert_if_illegal_input(self, user_try):
+    def assert_if_input_is_legal(self, user_try):
         if not user_try:
             raise TypeError()
 
@@ -23,7 +23,7 @@ class Baseball:
 
     def guess(self, user_try):
         user_try = str(user_try)
-        self.assert_if_illegal_input(user_try)
+        self.assert_if_input_is_legal(user_try)
         solved, strikes, balls = self.compare_user_try_with_answer(user_try)
         return BaseballResult(solved, strikes, balls)
 
